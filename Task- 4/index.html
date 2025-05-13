@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Reset + Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            animation: fadeInBody 1s ease-in-out;
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navbar */
+        .navbar-section {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .logo-section i {
+            color: #0056b3;
+            font-size: 2rem;
+        }
+
+        .menu-section a {
+            color: #0056b3;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-section a:hover {
+            color: #0088cc;
+        }
+
+        /* Middle Section */
+        .middle-section {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #heading {
+            font-size: 1.8rem;
+            color: #003366;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            text-align: left;
+            margin: 10px 0 5px 0;
+            color: #003366;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        button#btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.4s;
+        }
+
+        button#btn:hover {
+            background: linear-gradient(135deg, #0099cc, #0056b3);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .navbar-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-section {
+                margin-top: 10px;
+            }
+
+            #heading {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar-section">
+    <div class="logo-section">
+        <img src="cognifyz-1.png" alt="Logo" style="height: 50px;">
+    </div>
+    <div class="menu-section">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<div class="middle-section">
+    <h1 id="heading">Web Dev Internship<br>For B.Tech enrolled Students</h1>
+    <form id="registrationForm" action="/sign-up" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button id="btn" type="submit">Sign up</button>
+    </form>
+</div>
+
+<script src="client.js"></script>
+</body>
+</html>

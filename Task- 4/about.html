@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url('https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(16, 0, 109);
+            min-height: 100vh;
+            padding: 20px;
+            animation: fadeInBody 1s ease-in-out;
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 20, 173, 0.5);
+            animation: fadeIn 1.5s ease;
+        }
+
+        #outer-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 40px;
+            width: 80%;
+            max-width: 900px;
+            color: rgb(0, 0, 0);
+            text-align: justify;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            #outer-box {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>About Us</h1>
+<div id="outer-box">
+    <p>
+        Cognifyz Technologies is a technology company that provides software solutions for businesses.
+        The company offers a range of products and services, including artificial intelligence (AI),
+        machine learning (ML), and data analytics tools.
+        <br><br>
+        One of the main offerings of Cognifyz Technologies is their AI-powered chatbot platform, which can be
+        integrated with various communication channels such as websites, social media, and messaging apps.
+        The chatbot platform allows businesses to automate their customer support and engagement,
+        reduce response time, and improve customer satisfaction.
+        <br><br>
+        Cognifyz Technologies also provides ML-based solutions for predictive analytics, fraud detection,
+        and recommendation engines. These tools help businesses analyze large amounts of data and
+        make data-driven decisions in real-time.
+    </p>
+</div>
+
+</body>
+</html>

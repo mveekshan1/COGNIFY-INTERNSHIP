@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Success</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeInBody 1.5s ease-in-out;
+        }
+
+        /* Keyframes for fadeInBody */
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Outer Box */
+        #outer-box {
+            background: white;
+            color: #0056b3;
+            border-radius: 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            height: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-out;
+            padding: 20px;
+        }
+
+        /* Keyframes for slideUp animation */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #5e8bfe;
+            font-size: 2.5rem;
+            margin-top: 40px;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        /* Bounce animation for the heading */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            #outer-box {
+                width: 90%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="outer-box">
+    <h1>Registration Successful</h1>
+</div>
+
+</body>
+</html>

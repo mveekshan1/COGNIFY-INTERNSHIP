@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submission Result</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 0 0 10px #0099ff89, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      animation: flicker 2.5s infinite alternate;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 2em;
+      color: #ffffff;
+      text-shadow: 0 0 8px #3694ffd8, 0 0 16px #0066ffa4;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      margin-bottom: 30px;
+    }
+
+    .quote-container {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px #ff00cc;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .quote-image {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 8px #00ffff);
+    }
+
+    .quote-text {
+      font-size: 1.4em;
+      color: #ffffff;
+      text-shadow: 0 0 8px #00ffee;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      45% { opacity: 0.8; }
+      50% { opacity: 0.6; }
+      55% { opacity: 0.9; }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
+      }
+      to {
+        text-shadow: 0 0 20px #ff33cc, 0 0 30px #ff33cc;
+      }
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes sparkleAnim {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-800px) scale(0.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .neon-frame {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      border: 2px solid #00ffff;
+      border-radius: 25px;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      animation: sparkleAnim 5s linear infinite;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="neon-frame"></div>
+  <h1>Thank you for Visiting us, <%= name %>!</h1>
+  <p>We received your submission.</p>
+
+  <div class="quote-container" id="quoteBox">
+    <img id="quoteImage" class="quote-image" src="" alt="Quote Icon" />
+    <div class="quote-text" id="quoteText"></div>
+  </div>
+
+  <script>
+    for (let i = 0; i < 40; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.bottom = '-' + (Math.random() * 100 + 50) + 'px';
+      sparkle.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(sparkle);
+    }
+    const quotes = [
+      {
+        text: "You are the light the world didn't know it needed.",
+        img: "https://img.icons8.com/fluency/96/idea.png"
+      },
+      {
+        text: "Dream in color. Glow in reality.",
+        img: "https://img.icons8.com/fluency/96/paint-palette.png"
+      },
+      {
+        text: "Stay electric. The world needs your energy.",
+        img: "https://img.icons8.com/fluency/96/electricity.png"
+      },
+      {
+        text: "Shine so bright, your shadow gets inspired.",
+        img: "https://img.icons8.com/fluency/96/star.png"
+      },
+      {
+        text: "High vibes only. Low battery not allowed.",
+        img: "https://img.icons8.com/fluency/96/full-battery.png"
+      }
+    ];
+
+    let index = 0;
+    const quoteText = document.getElementById("quoteText");
+    const quoteImage = document.getElementById("quoteImage");
+
+    function updateQuote() {
+      const q = quotes[index];
+      quoteText.innerText = q.text;
+      quoteImage.src = q.img;
+      index = (index + 1) % quotes.length;
+    }
+
+    updateQuote(); // initial
+    setInterval(updateQuote, 6000); // rotate every 6 sec
+  </script>
+</body>
+</html>
